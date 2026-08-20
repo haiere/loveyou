@@ -1,15 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>A Message For You</title>
-    <meta name="description" content="A romantic animated message created especially for you." />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Cormorant+Garamond:ital,wght@0,500;1,600&display=swap" rel="stylesheet" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>A Romantic Animated Message for You | Haiere</title>
+<meta
+  name="description"
+  content="A romantic animated message with calm instrumental music, soft visuals, and a special interactive surprise made just for you."
+/>
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<link rel="canonical" href="https://haiere.github.io/loveyou/" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,600&family=Playfair+Display:ital,wght@0,500;0,700;1,600&family=Poppins:wght@300;400;500;600&display=swap"
+  rel="stylesheet"
+/>
+
+<link rel="icon" type="image/webp" href="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
+<link rel="apple-touch-icon" href="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
+
+<meta property="og:site_name" content="Haiere" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://haiere.github.io/loveyou/" />
+<meta property="og:title" content="A Romantic Animated Message for You | Haiere" />
+<meta
+  property="og:description"
+  content="A romantic animated message with calm instrumental music, soft visuals, and a special interactive surprise made just for you."
+/>
+<meta property="og:image" content="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
+<meta property="og:image:secure_url" content="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Romantic animated message preview by Haiere" />
+
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="A Romantic Animated Message for You | Haiere" />
+<meta
+  name="twitter:description"
+  content="A romantic animated message with calm instrumental music, soft visuals, and a special interactive surprise made just for you."
+/>
+<meta name="twitter:image" content="https://i.postimg.cc/8PJ0bhb1/H-haiere.webp" />
+<meta name="twitter:image:alt" content="Romantic animated message preview by Haiere" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://haiere.github.io/loveyou/#webpage",
+  "url": "https://haiere.github.io/loveyou/",
+  "name": "A Romantic Animated Message for You",
+  "description": "A romantic animated message with calm instrumental music, soft visuals, and a special interactive surprise made just for you.",
+  "inLanguage": "en",
+  "isPartOf": {
+    "@type": "WebSite",
+    "@id": "https://haiere.github.io/#website",
+    "url": "https://haiere.github.io/",
+    "name": "Haiere"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Haiere",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://i.postimg.cc/8PJ0bhb1/H-haiere.webp"
+    }
+  }
+}
+</script>
     <style>
-        /* ===== CSS CUSTOM PROPERTIES ===== */
+        /*CSS CUSTOM PROPERTIES*/
         :root {
             --c-black: #0a0509;
             --c-purple: #1a0b2e;
@@ -18,6 +80,7 @@
             --c-maroon: #3a0f1f;
             --c-glow: #ff6f9c;
             --c-text: #f5e9ee;
+
             --dur-word: 1.7s;
             --dur-gap: 0.35s;
             --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
@@ -33,8 +96,10 @@
             --accent: #ff6b9d;
         }
 
-        /* ===== RESET & BASE ===== */
-        * {
+        /*RESET & BASE*/
+        *,
+        *::before,
+        *::after {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
@@ -51,50 +116,48 @@
             font-family: 'Poppins', sans-serif;
             color: var(--text-primary);
             min-height: 100svh;
-            margin: 0;
-            overflow-x: hidden;
             background:
                 radial-gradient(circle at 15% 20%, rgb(255 91 153 / 35%), transparent 32%),
                 radial-gradient(circle at 85% 15%, rgb(114 92 255 / 35%), transparent 30%),
                 radial-gradient(circle at 50% 100%, rgb(255 172 92 / 25%), transparent 35%),
                 #0e1020;
-            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
+            position: relative;
         }
 
-        /* ===== BACKGROUND PARTICLES & STARS ===== */
-        #particles {
+        /*BACKGROUND LAYERS*/
+        #particles,
+        #hearts-layer {
             position: fixed;
-            z-index: -1;
             inset: 0;
             pointer-events: none;
             overflow: hidden;
+            z-index: -1;
+        }
+
+        #particles {
             opacity: 0.8;
             filter: blur(0.3px);
         }
-
         #hearts-layer {
-            position: fixed;
-            z-index: -1;
-            inset: 0;
-            pointer-events: none;
             opacity: 0.65;
             filter: blur(0.2px);
         }
 
+        /* ---- Particles ---- */
         .particle {
             position: absolute;
             bottom: -10px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 196, 214, 0.9), rgba(255, 196, 214, 0) 70%);
+            background: radial-gradient(circle, rgb(255 196 214 / 90%), rgb(255 196 214 / 0%) 70%);
             filter: blur(0.5px);
             animation: drift linear infinite;
         }
 
         @keyframes drift {
-            from {
+            0% {
                 transform: translateY(0) translateX(0);
                 opacity: 0;
             }
@@ -104,12 +167,13 @@
             90% {
                 opacity: 0.5;
             }
-            to {
+            100% {
                 transform: translateY(-110vh) translateX(var(--drift-x, 20px));
                 opacity: 0;
             }
         }
 
+        /* ---- Stars ---- */
         .star {
             position: absolute;
             width: 2px;
@@ -130,11 +194,11 @@
             }
         }
 
-        /* ===== FLOATING HEARTS ===== */
+        /* ---- Floating Hearts ---- */
         .heart {
             position: absolute;
             bottom: -5%;
-            color: rgba(255, 143, 177, 0.35);
+            color: rgb(255 143 177 / 35%);
             filter: blur(0.3px);
             font-size: 1.4rem;
             animation: floatUp linear forwards;
@@ -155,7 +219,7 @@
             }
         }
 
-        /* ===== MAIN WRAPPER ===== */
+        /*MAIN WRAPPER*/
         main {
             position: relative;
             z-index: 2;
@@ -167,7 +231,7 @@
             padding: 24px;
         }
 
-        /* ===== SCREENS ===== */
+        /*SCREENS*/
         .screen {
             width: 100%;
             max-width: 480px;
@@ -179,7 +243,7 @@
             align-items: center;
             justify-content: center;
             padding: 24px;
-            transition: opacity 0.8s var(--ease-soft), transform 0.8s var(--ease-soft), visibility 0.8s;
+            transition: opacity 0.8s var(--ease-soft), transform 0.8s var(--ease-soft);
         }
 
         .screen[hidden] {
@@ -208,7 +272,7 @@
             }
         }
 
-        /* ===== APPLE LIQUID GLASS — CARDS ===== */
+        /*APPLE LIQUID GLASS — CARDS*/
         .intro-card,
         #final-stage {
             position: relative;
@@ -217,24 +281,19 @@
             padding: clamp(1.5rem, 5vw, 3rem);
             overflow: hidden;
 
-            background:
-                linear-gradient(135deg, rgb(255 255 255 / 20%), rgb(255 255 255 / 7%));
-
+            background: linear-gradient(135deg, rgb(255 255 255 / 20%), rgb(255 255 255 / 7%));
             border: 1px solid var(--glass-border);
             border-radius: 32px;
-
             box-shadow:
                 0 24px 80px rgb(0 0 0 / 30%),
                 inset 0 1px 0 rgb(255 255 255 / 35%),
                 inset 0 -1px 0 rgb(255 255 255 / 8%);
-
             backdrop-filter: blur(24px) saturate(170%);
             -webkit-backdrop-filter: blur(24px) saturate(170%);
-
             animation: glass-appear 0.8s ease both;
         }
 
-        /* ---- Glass highlight reflection (top) ---- */
+        /* ---- Glass highlight reflection ---- */
         .intro-card::before,
         #final-stage::before {
             position: absolute;
@@ -280,7 +339,7 @@
             }
         }
 
-        /* ===== INTRO SCREEN ===== */
+        /*INTRO SCREEN*/
         .eyebrow {
             margin: 0 0 0.75rem;
             color: rgb(255 255 255 / 62%);
@@ -308,10 +367,16 @@
             margin-bottom: 24px;
         }
 
+        /* ---- Form ---- */
         form {
             display: flex;
             flex-direction: column;
             gap: 16px;
+        }
+
+        .form-group {
+            display: grid;
+            gap: 0.5rem;
         }
 
         .field-label {
@@ -319,35 +384,30 @@
             font-size: 0.78rem;
             font-weight: 400;
             letter-spacing: 0.03em;
-            color: rgba(245, 233, 238, 0.6);
+            color: rgb(245 233 238 / 60%);
             padding-left: 4px;
         }
 
-        /* ===== GLASS INPUT ===== */
+        /* ---- Glass Input ---- */
         #name-input {
             width: 100%;
             min-height: 52px;
             box-sizing: border-box;
             padding: 0 1rem;
-
             color: #ffffff;
             background: rgb(0 0 0 / 16%);
             border: 1px solid rgb(255 255 255 / 20%);
             border-radius: 17px;
             outline: none;
-
             box-shadow:
                 inset 0 1px 1px rgb(255 255 255 / 12%),
                 0 8px 24px rgb(0 0 0 / 10%);
-
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
-
             transition:
                 border-color 180ms ease,
                 background 180ms ease,
-                box-shadow 180ms ease,
-                transform 180ms ease;
+                box-shadow 180ms ease;
         }
 
         #name-input::placeholder {
@@ -388,16 +448,12 @@
             transform: translateY(0);
         }
 
-        /* ===== GLASS BUTTONS ===== */
+        /*GLASS BUTTONS*/
         .btn,
         .mute-toggle {
             border: 1px solid rgb(255 255 255 / 28%);
             color: #ffffff;
-            background:
-                linear-gradient(135deg,
-                    rgb(255 255 255 / 24%),
-                    rgb(255 255 255 / 9%)
-                );
+            background: linear-gradient(135deg, rgb(255 255 255 / 24%), rgb(255 255 255 / 9%));
             box-shadow:
                 inset 0 1px 0 rgb(255 255 255 / 34%),
                 0 10px 25px rgb(0 0 0 / 18%);
@@ -415,15 +471,12 @@
             min-height: 50px;
             padding: 0.8rem 1.25rem;
             border-radius: 16px;
+            user-select: none;
         }
 
         .btn:hover,
         .mute-toggle:hover {
-            background:
-                linear-gradient(135deg,
-                    rgb(255 255 255 / 34%),
-                    rgb(255 255 255 / 14%)
-                );
+            background: linear-gradient(135deg, rgb(255 255 255 / 34%), rgb(255 255 255 / 14%));
             box-shadow:
                 inset 0 1px 0 rgb(255 255 255 / 45%),
                 0 14px 32px rgb(0 0 0 / 25%);
@@ -436,49 +489,39 @@
         }
 
         .btn-primary {
-            background:
-                linear-gradient(135deg,
-                    rgb(255 107 157 / 85%),
-                    rgb(176 82 255 / 72%)
-                );
+            background: linear-gradient(135deg, rgb(255 107 157 / 85%), rgb(176 82 255 / 72%));
             margin-top: 6px;
         }
 
         .btn-primary:hover {
-            background:
-                linear-gradient(135deg,
-                    rgb(255 107 157 / 95%),
-                    rgb(176 82 255 / 82%)
-                );
+            background: linear-gradient(135deg, rgb(255 107 157 / 95%), rgb(176 82 255 / 82%));
         }
 
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.06);
+            background: rgb(255 255 255 / 6%);
             box-shadow: none;
-            border: 1px solid rgba(255, 255, 255, 0.12);
+            border: 1px solid rgb(255 255 255 / 12%);
             font-size: 0.85rem;
             padding: 11px 20px;
             min-height: 44px;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+            background: rgb(255 255 255 / 10%);
+            box-shadow: 0 6px 20px rgb(0 0 0 / 25%);
         }
 
-        /* ===== MUTE TOGGLE (floating glass) ===== */
+        /* ---- Mute Toggle (floating) ---- */
         .mute-toggle {
             position: fixed;
             z-index: 20;
             top: 1.25rem;
             right: 1.25rem;
-
             display: grid;
             width: 48px;
             height: 48px;
             padding: 0;
             place-items: center;
-
             border-radius: 50%;
             font-size: 1.25rem;
             background: rgb(255 255 255 / 12%);
@@ -495,7 +538,7 @@
             outline-offset: 2px;
         }
 
-        /* ===== ANIMATION SCREEN ===== */
+        /*ANIMATION SCREEN — WORD STAGE*/
         #word-stage {
             position: relative;
             height: 180px;
@@ -557,13 +600,13 @@
 
         .word--accent {
             color: var(--c-pink);
-            text-shadow: 0 0 18px rgba(255, 111, 156, 0.55), 0 0 40px rgba(255, 111, 156, 0.25);
+            text-shadow: 0 0 18px rgb(255 111 156 / 55%), 0 0 40px rgb(255 111 156 / 25%);
         }
 
         .word--name {
             font-size: clamp(2.8rem, 13vw, 5rem);
             color: var(--c-pink-soft);
-            text-shadow: 0 0 24px rgba(255, 196, 214, 0.6), 0 0 50px rgba(255, 111, 156, 0.3);
+            text-shadow: 0 0 24px rgb(255 196 214 / 60%), 0 0 50px rgb(255 111 156 / 30%);
         }
 
         .name-glow-ring {
@@ -571,7 +614,7 @@
             width: 220px;
             height: 220px;
             border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 143, 177, 0.25), transparent 70%);
+            background: radial-gradient(circle, rgb(255 143 177 / 25%), transparent 70%);
             opacity: 0;
             animation: ringIn 2s var(--ease-soft) forwards;
             pointer-events: none;
@@ -615,7 +658,7 @@
             }
         }
 
-        /* ===== FINAL SCREEN ===== */
+        /*FINAL SCREEN*/
         #final-stage {
             display: flex;
             flex-direction: column;
@@ -629,7 +672,7 @@
             font-size: clamp(1.7rem, 7vw, 2.6rem);
             text-align: center;
             color: var(--c-pink-soft);
-            text-shadow: 0 0 20px rgba(255, 143, 177, 0.5), 0 0 50px rgba(255, 111, 156, 0.25);
+            text-shadow: 0 0 20px rgb(255 143 177 / 50%), 0 0 50px rgb(255 111 156 / 25%);
             opacity: 0;
             transform: scale(0.9);
             animation: finalIn 1.4s var(--ease-soft) forwards, floatSlow 4.5s ease-in-out 1.4s infinite;
@@ -691,7 +734,7 @@
             }
         }
 
-        /* ===== ACCESSIBILITY ===== */
+        /*ACCESSIBILITY*/
         .sr-only {
             position: absolute;
             width: 1px;
@@ -704,18 +747,13 @@
             border: 0;
         }
 
-        .form-group {
-            display: grid;
-            gap: 0.5rem;
-        }
-
         button:focus-visible,
         input:focus-visible {
             outline: 2px solid var(--c-pink-soft);
             outline-offset: 2px;
         }
 
-        /* ===== REDUCED MOTION ===== */
+        /*REDUCED MOTION*/
         @media (prefers-reduced-motion: reduce) {
 
             *,
@@ -784,7 +822,7 @@
             }
         }
 
-        /* ===== REDUCED TRANSPARENCY ===== */
+        /*REDUCED TRANSPARENCY*/
         @media (prefers-reduced-transparency: reduce) {
             .intro-card,
             #final-stage,
@@ -805,84 +843,147 @@
     <div id="hearts-layer" aria-hidden="true"></div>
 
     <!-- ===== AUDIO CONTROL ===== -->
-    <button class="mute-toggle is-muted" id="mute-btn" type="button" aria-pressed="true" aria-label="Unmute audio" title="Unmute audio">
+    <button id="mute-btn" class="mute-toggle is-muted" type="button" aria-pressed="true" aria-label="Unmute audio" title="Unmute audio">
         <span aria-hidden="true">♫</span>
     </button>
 
+    <audio id="bg-music" autoplay muted loop preload="auto" playsinline>
+        <source src="https://files.catbox.moe/j0r70l.mp3" type="audio/mpeg" />
+        <p>Your browser does not support the audio element.</p>
+    </audio>
+
     <!-- ===== MAIN CONTENT ===== -->
     <main id="main-content">
-
-        <!-- SCREEN 1: INTRO -->
-        <section class="screen screen-intro" id="screen-intro" aria-labelledby="intro-title">
-
+        <!-- INTRO SCREEN -->
+        <section id="screen-intro" class="screen" aria-labelledby="intro-title">
             <div class="intro-card">
                 <p class="eyebrow">A special message</p>
-
-                <h1 class="intro-title" id="intro-title">
-                    A little message for you
-                </h1>
-
-                <p class="intro-description">
-                    Enter your name to begin.
-                </p>
+                <h1 id="intro-title" class="intro-title">A little message for you</h1>
+                <p class="intro-description">Enter your name to begin.</p>
 
                 <form id="name-form" novalidate>
                     <div class="form-group">
-                        <label class="field-label" for="name-input">
-                            Your name
-                        </label>
-
-                        <input type="text" id="name-input" name="name" placeholder="Enter your name..." autocomplete="name" maxlength="40" required aria-required="true" aria-describedby="validation-msg" aria-invalid="false" />
-
-                        <p class="validation-message" id="validation-msg" role="alert" aria-live="polite"></p>
+                        <label class="field-label" for="name-input">Your name</label>
+                        <input id="name-input" name="name" type="text" placeholder="Enter your name..." autocomplete="name" maxlength="40" required aria-required="true" aria-describedby="validation-msg" aria-invalid="false" />
+                        <p id="validation-msg" class="validation-message" role="alert" aria-live="polite"></p>
                     </div>
-
-                    <button type="submit" class="btn btn-primary">
-                        Start <span aria-hidden="true">→</span>
-                    </button>
+                    <button type="submit" class="btn btn-primary">Start <span aria-hidden="true">→</span></button>
                 </form>
             </div>
         </section>
 
-        <!-- SCREEN 2: ANIMATION -->
-        <section class="screen screen-animation" id="screen-animation" aria-labelledby="animation-title" aria-live="polite" aria-atomic="true" hidden>
-
-            <h2 class="sr-only" id="animation-title">Message animation</h2>
-
-            <div id="word-stage"></div>
+        <!-- ANIMATION SCREEN -->
+        <section id="screen-animation" class="screen" aria-labelledby="animation-title" aria-live="polite" aria-atomic="true" hidden>
+            <h2 id="animation-title" class="sr-only">Message animation</h2>
+            <div id="word-stage" class="word-stage" aria-hidden="true"></div>
         </section>
 
-        <!-- SCREEN 3: FINAL -->
-        <section class="screen screen-final" id="screen-final" aria-labelledby="final-title" hidden>
-
-            <div id="final-stage">
+        <!-- FINAL SCREEN -->
+        <section id="screen-final" class="screen" aria-labelledby="final-title" hidden>
+            <div id="final-stage" class="final-stage">
                 <h2 id="final-title" class="sr-only">Final message</h2>
-
                 <p id="final-message" aria-live="polite" aria-atomic="true"></p>
-
                 <div class="final-actions">
-                    <button type="button" class="btn btn-secondary" id="btn-repeat">
-                        <span aria-hidden="true">↻</span> Play again
-                    </button>
-
-                    <button type="button" class="btn btn-secondary" id="btn-change">
-                        <span aria-hidden="true">✎</span> Change name
-                    </button>
+                    <button type="button" class="btn btn-secondary" id="btn-repeat"><span aria-hidden="true">↻</span> Play again</button>
+                    <button type="button" class="btn btn-secondary" id="btn-change"><span aria-hidden="true">✎</span> Change name</button>
                 </div>
             </div>
         </section>
     </main>
 
-    <!-- ===== JAVASCRIPT ===== -->
+    <!--JAVASCRIPT-->
     <script>
         (function() {
-            "use strict";
+            'use strict';
 
-            /* ---- BACKGROUND PARTICLES & STARS ---- */
+            /*CONSTANTS & CONFIG*/
+            const CONFIG = {
+                AUDIO_URL: 'https://files.catbox.moe/j0r70l.mp3',
+                VOLUME: 0.35,
+                HEART_INTERVAL_MS: 700,
+                HEART_LIFETIME_MS: 12000,
+                WORD_HOLD_MS: 1700,
+                WORD_GAP_MS: 350,
+                TRANSITION_DELAY_MS: 800,
+                NAME_MIN_LENGTH: 2,
+            };
+
+            /*DOM REFS*/
+            const $ = (sel) => document.querySelector(sel);
+            const $$ = (sel) => document.querySelectorAll(sel);
+
+            const bgMusic = $('#bg-music');
+            const muteBtn = $('#mute-btn');
+            const nameForm = $('#name-form');
+            const nameInput = $('#name-input');
+            const validationMsg = $('#validation-msg');
+            const screenIntro = $('#screen-intro');
+            const screenAnim = $('#screen-animation');
+            const screenFinal = $('#screen-final');
+            const wordStage = $('#word-stage');
+            const finalMessage = $('#final-message');
+            const btnRepeat = $('#btn-repeat');
+            const btnChange = $('#btn-change');
+            const heartsLayer = $('#hearts-layer');
+
+            /*STATE*/
+            let currentName = '';
+            let animationRunning = false;
+            let heartsInterval = null;
+            let musicStarted = false;
+            let muted = true;
+            let isTransitioning = false;
+
+            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            /*AUDIO*/
+            if (bgMusic) {
+                bgMusic.src = CONFIG.AUDIO_URL;
+                bgMusic.loop = true;
+                bgMusic.preload = 'auto';
+                bgMusic.volume = CONFIG.VOLUME;
+                // Ensure muted state matches the button
+                bgMusic.muted = true;
+            }
+
+            async function startMusic() {
+                if (!bgMusic || musicStarted) return;
+                try {
+                    bgMusic.muted = muted;
+                    await bgMusic.play();
+                    musicStarted = true;
+                } catch (err) {
+                    console.warn('Audio playback blocked:', err);
+                }
+            }
+
+            function toggleMute() {
+                muted = !muted;
+                if (bgMusic) {
+                    bgMusic.muted = muted;
+                    if (!muted && !musicStarted) {
+                        startMusic();
+                    }
+                }
+                updateMuteUI();
+            }
+
+            function updateMuteUI() {
+                muteBtn.setAttribute('aria-pressed', String(!muted));
+                muteBtn.classList.toggle('is-muted', muted);
+                const icon = muteBtn.querySelector('span');
+                icon.textContent = muted ? '♫' : '♪';
+                muteBtn.setAttribute('aria-label', muted ? 'Unmute audio' : 'Mute audio');
+                muteBtn.setAttribute('title', muted ? 'Unmute audio' : 'Mute audio');
+            }
+
+            /*BACKGROUND — PARTICLES & STARS*/
             function initBackground() {
-                const layer = document.getElementById('particles');
+                const layer = $('#particles');
+                if (!layer) return;
                 const frag = document.createDocumentFragment();
 
+                // Particles
                 for (let i = 0; i < 18; i++) {
                     const p = document.createElement('div');
                     p.className = 'particle';
@@ -896,6 +997,7 @@
                     frag.appendChild(p);
                 }
 
+                // Stars
                 for (let i = 0; i < 25; i++) {
                     const s = document.createElement('div');
                     s.className = 'star';
@@ -910,27 +1012,59 @@
             }
             initBackground();
 
-            /* ---- DOM REFS ---- */
-            const nameForm = document.getElementById('name-form');
-            const nameInput = document.getElementById('name-input');
-            const validationMsg = document.getElementById('validation-msg');
-            const screenIntro = document.getElementById('screen-intro');
-            const screenAnim = document.getElementById('screen-animation');
-            const screenFinal = document.getElementById('screen-final');
-            const wordStage = document.getElementById('word-stage');
-            const finalMessage = document.getElementById('final-message');
-            const btnRepeat = document.getElementById('btn-repeat');
-            const btnChange = document.getElementById('btn-change');
-            const muteBtn = document.getElementById('mute-btn');
-            const heartsLayer = document.getElementById('hearts-layer');
+            /* 
+                   FLOATING HEARTS
+                    */
+            function spawnHeart() {
+                if (reducedMotion) return;
+                const h = document.createElement('div');
+                h.className = 'heart';
+                h.textContent = '♥';
+                h.style.left = Math.random() * 100 + '%';
+                h.style.setProperty('--sway', (Math.random() * 40 - 20) + 'px');
+                h.style.fontSize = (0.9 + Math.random() * 1.2) + 'rem';
+                h.style.animationDuration = (6 + Math.random() * 5) + 's';
+                heartsLayer.appendChild(h);
+                setTimeout(() => { if (h.parentNode) h.remove(); }, CONFIG.HEART_LIFETIME_MS);
+            }
 
-            let currentName = '';
-            let muted = true;
-            let animationRunning = false;
-            let heartsInterval = null;
-            const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            function startHearts() {
+                if (heartsInterval || reducedMotion) return;
+                // Spawn a few immediately
+                for (let i = 0; i < 3; i++) setTimeout(spawnHeart, i * 200);
+                heartsInterval = setInterval(spawnHeart, CONFIG.HEART_INTERVAL_MS);
+            }
 
-            /* ---- VALIDATION ---- */
+            function stopHearts() {
+                if (heartsInterval) {
+                    clearInterval(heartsInterval);
+                    heartsInterval = null;
+                }
+                heartsLayer.querySelectorAll('.heart').forEach(h => h.remove());
+            }
+
+            /*SCREEN TRANSITION*/
+            function switchScreen(fromEl, toEl) {
+                if (isTransitioning) return;
+                isTransitioning = true;
+
+                fromEl.classList.add('fade-out');
+                const delay = reducedMotion ? 0 : CONFIG.TRANSITION_DELAY_MS;
+
+                setTimeout(() => {
+                    fromEl.hidden = true;
+                    fromEl.classList.remove('fade-out');
+                    toEl.hidden = false;
+                    toEl.classList.add('fade-in');
+
+                    setTimeout(() => {
+                        toEl.classList.remove('fade-in');
+                        isTransitioning = false;
+                    }, reducedMotion ? 50 : 900);
+                }, delay);
+            }
+
+            /*VALIDATION*/
             function showValidation(msg) {
                 validationMsg.textContent = msg;
                 validationMsg.classList.add('show');
@@ -945,75 +1079,7 @@
 
             nameInput.addEventListener('input', clearValidation);
 
-            /* ---- FLOATING HEARTS ---- */
-            function spawnHeart() {
-                if (reducedMotion) return;
-                const h = document.createElement('div');
-                h.className = 'heart';
-                h.textContent = '♥';
-                h.style.left = Math.random() * 100 + '%';
-                h.style.setProperty('--sway', (Math.random() * 40 - 20) + 'px');
-                h.style.fontSize = (0.9 + Math.random() * 1.2) + 'rem';
-                h.style.animationDuration = (6 + Math.random() * 5) + 's';
-                heartsLayer.appendChild(h);
-                setTimeout(() => h.remove(), 12000);
-            }
-
-            function startHearts() {
-                if (heartsInterval || reducedMotion) return;
-                heartsInterval = setInterval(spawnHeart, 700);
-            }
-
-            function stopHearts() {
-                clearInterval(heartsInterval);
-                heartsInterval = null;
-                document.querySelectorAll('.heart').forEach(h => h.remove());
-            }
-
-            /* ---- SCREEN TRANSITION ---- */
-            function switchScreen(fromEl, toEl) {
-                fromEl.classList.add('fade-out');
-                const delay = reducedMotion ? 0 : 800;
-                setTimeout(() => {
-                    fromEl.hidden = true;
-                    fromEl.classList.remove('fade-out');
-                    toEl.hidden = false;
-                    toEl.classList.add('fade-in');
-                    setTimeout(() => toEl.classList.remove('fade-in'), 900);
-                }, delay);
-            }
-
-            /* ---- FORM SUBMIT ---- */
-            function handleSubmit(e) {
-                e.preventDefault();
-                const raw = nameInput.value.trim().replace(/\s+/g, ' ');
-                if (!raw) {
-                    showValidation('Please enter a name first');
-                    nameInput.focus();
-                    return;
-                }
-                if (raw.length < 2) {
-                    showValidation('Your name must contain at least 2 characters.');
-                    nameInput.focus();
-                    return;
-                }
-                clearValidation();
-                currentName = raw;
-                switchScreen(screenIntro, screenAnim);
-                startHearts();
-                setTimeout(runWordSequence, reducedMotion ? 100 : 850);
-            }
-
-            nameForm.addEventListener('submit', handleSubmit);
-
-            nameInput.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    nameForm.dispatchEvent(new Event('submit'));
-                }
-            });
-
-            /* ---- WORD SEQUENCE ---- */
+            /*WORD SEQUENCE*/
             function makeMiniHeart(container) {
                 const mh = document.createElement('span');
                 mh.className = 'mini-heart-pop';
@@ -1021,7 +1087,7 @@
                 mh.style.left = (40 + Math.random() * 20) + '%';
                 mh.style.top = (30 + Math.random() * 20) + '%';
                 container.appendChild(mh);
-                setTimeout(() => mh.remove(), 1900);
+                setTimeout(() => { if (mh.parentNode) mh.remove(); }, 1900);
             }
 
             function showWord(text, opts) {
@@ -1044,9 +1110,11 @@
                     el.textContent = text;
                     wordStage.appendChild(el);
 
-                    requestAnimationFrame(() => el.classList.add('show'));
+                    // Force reflow then show
+                    void el.offsetWidth;
+                    el.classList.add('show');
 
-                    const holdTime = reducedMotion ? 400 : (opts.duration || 1700);
+                    const holdTime = reducedMotion ? 400 : (opts.duration || CONFIG.WORD_HOLD_MS);
                     setTimeout(() => {
                         el.classList.remove('show');
                         el.classList.add('leave');
@@ -1063,7 +1131,7 @@
                 if (animationRunning) return;
                 animationRunning = true;
 
-                const gap = reducedMotion ? 50 : 350;
+                const gap = reducedMotion ? 50 : CONFIG.WORD_GAP_MS;
 
                 await showWord('I', { duration: 1500 });
                 await sleep(gap);
@@ -1078,8 +1146,9 @@
                 showFinal();
             }
 
-            /* ---- FINAL SCREEN ---- */
+            /*FINAL SCREEN*/
             function showFinal() {
+                // Build final message
                 finalMessage.innerHTML = '';
                 const textNode = document.createTextNode('I Love You, ');
                 const nameSpan = document.createElement('span');
@@ -1093,7 +1162,7 @@
                 finalMessage.appendChild(nameSpan);
                 finalMessage.appendChild(heartSpan);
 
-                // restart CSS animation cleanly
+                // Reset animation to ensure it plays
                 finalMessage.style.animation = 'none';
                 void finalMessage.offsetWidth;
                 finalMessage.style.animation = '';
@@ -1101,32 +1170,56 @@
                 switchScreen(screenAnim, screenFinal);
             }
 
-            /* ---- BUTTONS ---- */
+            /*FORM SUBMIT*/
+            async function handleSubmit(e) {
+                e.preventDefault();
+
+                const raw = nameInput.value.trim().replace(/\s+/g, ' ');
+                if (!raw) {
+                    showValidation('Please enter a name first');
+                    nameInput.focus();
+                    return;
+                }
+                if (raw.length < CONFIG.NAME_MIN_LENGTH) {
+                    showValidation('Your name must contain at least ' + CONFIG.NAME_MIN_LENGTH + ' characters.');
+                    nameInput.focus();
+                    return;
+                }
+
+                clearValidation();
+                currentName = raw;
+
+                await startMusic();
+                switchScreen(screenIntro, screenAnim);
+                startHearts();
+
+                const delay = reducedMotion ? 100 : 850;
+                setTimeout(runWordSequence, delay);
+            }
+
+            nameForm.addEventListener('submit', handleSubmit);
+
+            /*BUTTON HANDLERS*/
             btnRepeat.addEventListener('click', function() {
+                if (isTransitioning) return;
                 switchScreen(screenFinal, screenAnim);
-                setTimeout(runWordSequence, reducedMotion ? 100 : 850);
+                const delay = reducedMotion ? 100 : 850;
+                setTimeout(runWordSequence, delay);
             });
 
             btnChange.addEventListener('click', function() {
+                if (isTransitioning) return;
                 stopHearts();
                 nameInput.value = '';
                 clearValidation();
                 switchScreen(screenFinal, screenIntro);
-                setTimeout(() => nameInput.focus(), 850);
+                setTimeout(() => nameInput.focus(), reducedMotion ? 50 : 850);
             });
 
-            /* ---- MUTE TOGGLE ---- */
-            muteBtn.addEventListener('click', function() {
-                muted = !muted;
-                muteBtn.setAttribute('aria-pressed', String(!muted));
-                muteBtn.classList.toggle('is-muted', muted);
-                const icon = muteBtn.querySelector('span');
-                icon.textContent = muted ? '♫' : '♫';
-                muteBtn.setAttribute('aria-label', muted ? 'Unmute audio' : 'Mute audio');
-                muteBtn.setAttribute('title', muted ? 'Unmute audio' : 'Mute audio');
-            });
+            /*MUTE TOGGLE*/
+            muteBtn.addEventListener('click', toggleMute);
 
-            /* ---- KEYBOARD SHORTCUT ---- */
+            // Keyboard shortcut: Escape to go back from final screen
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
                     if (!screenIntro.hidden) {
@@ -1136,6 +1229,22 @@
                     }
                 }
             });
+
+            // Also allow Space/Enter on the mute button via default behavior
+
+            /*INITIAL SETUP*/
+            updateMuteUI();
+
+            // Pre-warm audio on first user interaction
+            document.addEventListener('click', function wakeAudio() {
+                if (!musicStarted && bgMusic) {
+                    startMusic();
+                }
+                // Remove after first click
+                document.removeEventListener('click', wakeAudio);
+            }, { once: true });
+
+            console.log('✨ A Message For You ');
 
         })();
     </script>

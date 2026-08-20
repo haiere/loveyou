@@ -1,164 +1,206 @@
 # A Message For You
 
-A romantic animated greeting that displays a personalised message with elegant glass-morphism design and subtle motion effects.
+A single-page romantic web experience by **Haiere** that delivers a personalized animated message with soft glassmorphism visuals, floating hearts, and optional calm instrumental background music.
 
-This single-page HTML application presents a thoughtful, animated message for a special person. After entering a name, the user experiences a gentle word-by-word reveal—"I", "Love", "You", and finally the name itself—accompanied by floating hearts, soft particle effects, and a polished glass-inspired interface.
+![Preview](https://i.postimg.cc/8PJ0bhb1/H-haiere.webp)
 
-The application is self-contained, requires no backend, and runs entirely in the browser. It is designed to be used as a personal greeting, a surprise message, or a romantic gift.
+## Overview
 
----
+**A Message For You** is a lightweight, self-contained web app built with HTML, CSS, and vanilla JavaScript.  
+It lets the user enter a name, then reveals a cinematic message sequence: **I → Love → You → [Name]** with smooth transitions and a polished visual style.
+
+It is suitable for:
+- Personal gifts and surprise messages.
+- Learning modern CSS animation and UI effects.
+- Prototyping single-page interactive experiences.
+- Demonstrating accessible front-end patterns.
 
 ## Features
 
-- Name-based personalisation — Enter any name to receive a custom message.
-- Animated word reveal — Words appear sequentially with smooth transitions and subtle blur effects.
-- Glass-morphism UI — Apple-inspired liquid glass cards with backdrop blur, soft borders, and gentle highlights.
-- Ambient background — Floating particles, twinkling stars, and drifting hearts create a dreamy atmosphere.
-- Name glow effect — The final name is displayed with a soft glow and pulsing heart animation.
-- Responsive design — Adapts to all screen sizes, from mobile phones to large displays.
-- Accessibility — Supports reduced motion preferences, screen reader labels, and keyboard navigation.
-- Privacy-first — No data is stored or transmitted; the name is only used locally to generate the message.
-
----
+- Personalized message flow with name input.
+- Smooth word-by-word animation sequence.
+- Glassmorphism-inspired interface.
+- Floating particles and twinkling stars.
+- Animated hearts during the message reveal.
+- Optional background audio with mute toggle.
+- Keyboard support with Escape navigation.
+- Responsive layout for mobile and desktop.
+- Accessibility-friendly markup and motion preferences.
 
 ## Requirements
 
-- A modern web browser with JavaScript enabled (Chrome, Firefox, Edge, Safari, or similar).
-- An internet connection is required only to load the Google Fonts stylesheet (Poppins, Playfair Display, Cormorant Garamond). Once loaded, the fonts are cached by the browser.
+The project runs entirely in a browser.
 
----
+| Requirement | Details |
+|---|---|
+| Operating system | Any modern OS |
+| Browser | Chrome, Firefox, Safari, Edge |
+| JavaScript | Enabled |
+| Audio | Optional, HTML5 Audio supported |
+
+## Quick Start
+
+1. Open `index.html` in a modern browser.
+2. Enter your name.
+3. Click **Start**.
+4. Watch the animated sequence.
+5. Use **Play again** or **Change name** on the final screen.
 
 ## Installation
 
-The application is a single HTML file. To use it:
+### Direct use
+Download the `index.html` file and open it in your browser.
 
-1. Open the hosted URL in your browser.
-2. Alternatively, download the `index.html` file and open it locally.
+### Clone the repository:
 
-No additional setup, server, or dependencies are required.
+```bash
+git clone https://github.com/haiere/loveyou
+cd loveyou
+open index.html
+``` 
 
----
+No build step is required.
 
 ## Usage
 
-### Step-by-step
+### Basic flow
+1. **Intro screen** — Enter a name with at least 2 characters.
+2. **Animation screen** — The words appear one by one with visual effects.
+3. **Final screen** — The personalized message is shown with action buttons.
 
-1. Enter a name — Type any name into the input field on the intro screen.
-2. Submit — Press the "Start" button or hit Enter.
-3. Watch the animation — The words "I", "Love", "You", and then the name appear one by one with smooth transitions and subtle sparkle effects.
-4. View the final message — The screen shows "I Love You, [name] ♥" with a pulsing heart.
-5. Interact — Use the "Play again" button to replay the animation, or "Change name" to go back and enter a different name.
+### Audio controls
+- The mute button is located in the top-right corner.
+- Audio starts muted by default.
+- Audio will attempt to play after user interaction.
 
 ### Keyboard shortcuts
+- **Escape** — Removes focus from the input on the intro screen.
+- **Escape** — Goes to **Change name** on the final screen.
 
-| Shortcut | Action |
-|---|---|
-| Enter | Submit the name on the intro screen |
-| Escape | Blur the input field on the intro screen, or return to the intro screen from the final screen |
+## Configuration
 
----
-
-## Accessibility
-
-- Reduced motion — The application respects the `prefers-reduced-motion` system setting. When enabled, animations are simplified or disabled.
-- Reduced transparency — The application respects `prefers-reduced-transparency` by using solid backgrounds instead of glass effects.
-- Screen reader support — Semantic HTML and ARIA attributes are used throughout. The animation screen includes `aria-live="polite"` to announce new words as they appear.
-- Keyboard navigation — All interactive elements are reachable via keyboard, with visible focus indicators.
-- Form validation — The name input includes real-time validation with descriptive error messages.
-
----
-
-## Customisation
-
-The application can be easily customised by modifying the CSS variables and JavaScript arrays in the source code.
-
-### Changing the message
-
-To change the word sequence, locate the `runWordSequence` function in the JavaScript section. The current sequence is:
+You can customize the behavior in the JavaScript config object:
 
 ```javascript
-await showWord('I', { duration: 1500 });
-await showWord('Love', { accent: true, duration: 1600 });
-await showWord('You', { accent: true, duration: 1600 });
-await showWord(currentName, { isName: true, withGlowRing: true, duration: 2000 });
+const CONFIG = {
+    AUDIO_URL: 'https://files.catbox.moe/j0r70l.mp3',
+    VOLUME: 0.35,
+    HEART_INTERVAL_MS: 700,
+    HEART_LIFETIME_MS: 12000,
+    WORD_HOLD_MS: 1700,
+    WORD_GAP_MS: 350,
+    TRANSITION_DELAY_MS: 800,
+    NAME_MIN_LENGTH: 2,
+};
 ```
 
-Replace or reorder the words as desired.
+| Setting | Description |
+|---|---|
+| `AUDIO_URL` | Direct link to the background music file. |
+| `VOLUME` | Music volume from `0.0` to `1.0`. |
+| `HEART_INTERVAL_MS` | Interval between floating heart spawns. |
+| `HEART_LIFETIME_MS` | Time before a heart disappears. |
+| `WORD_HOLD_MS` | Duration each word stays visible. |
+| `WORD_GAP_MS` | Delay between word transitions. |
+| `TRANSITION_DELAY_MS` | Screen fade timing. |
+| `NAME_MIN_LENGTH` | Minimum name length allowed. |
 
-### Adjusting colours
+## Project Structure
 
-The colour palette is defined in the `:root` CSS variables:
-
-```css
---c-pink: #ff8fb1;
---c-pink-soft: #ffc4d6;
---c-glow: #ff6f9c;
---c-maroon: #3a0f1f;
---c-black: #0a0509;
---c-purple: #1a0b2e;
+```txt
+index.html
 ```
 
-Modify these values to match your preferred theme.
+The entire project is contained in a single HTML file with embedded CSS and JavaScript.
 
-### Animation timing
+## Supported Platforms
 
-Each word's display duration can be adjusted via the `duration` property (in milliseconds) passed to `showWord`. The gap between words is controlled by the `gap` variable in the `runWordSequence` function.
-
----
-
-## Privacy
-
-The application is fully client-side:
-
-- No data is sent to any server.
-- No cookies are used.
-- No analytics or tracking scripts are included.
-- The name you enter is only used to generate the final message and is never persisted or transmitted.
-
----
+- Desktop: Chrome, Firefox, Safari, Edge.
+- Mobile: Safari on iOS, Chrome on Android, Samsung Internet.
+- Touch-friendly and responsive on smaller screens.
 
 ## Troubleshooting
 
-### Fonts not loading
+### Audio does not play
+- Most browsers require a user gesture before audio can start.
+- Click the mute button or interact with the page.
+- Make sure the audio URL is reachable.
 
-Check your internet connection; the application relies on Google Fonts. If offline, consider hosting the font files locally.
+### Animations feel slow
+- Reduce particle or heart counts.
+- Enable hardware acceleration in the browser.
+- Use reduced motion settings if needed.
 
-### Animation does not start
+### Input validation fails
+- The name must contain at least 2 characters.
+- Leading and trailing spaces are trimmed automatically.
 
-Ensure JavaScript is enabled and that you have entered a valid name (at least 2 characters).
+### Screen transitions get stuck
+- Refresh the page and try again.
+- Check the browser console for JavaScript errors.
 
-### Reduced motion mode active
+## Security and Privacy
 
-If you have system-level reduced motion enabled, animations will be minimal or disabled. This is intentional and respects user preferences.
+- No user data is collected or stored.
+- Everything runs client-side in the browser.
+- No cookies, analytics, or tracking scripts are included.
+- The optional audio file is the only external resource.
 
-### Name not displaying correctly
+## Performance Notes
 
-The input field accepts up to 40 characters. Very long names may wrap on smaller screens.
-
----
+- Single-file architecture reduces requests.
+- Animations use `transform` and `opacity` for smoother rendering.
+- Particle and heart counts are intentionally limited.
+- Reduced-motion support lowers CPU and GPU usage.
 
 ## Development
 
-The entire application is contained in a single `index.html` file. To modify or extend it:
+To edit the project:
+1. Open `index.html` in a text editor.
+2. Modify HTML, CSS, or JavaScript.
+3. Save the file.
+4. Refresh the browser.
 
-- Edit the HTML structure directly.
-- CSS custom properties and styles are located in the `<style>` block.
-- JavaScript logic is at the bottom of the file, inside the `<script>` tag.
+No special development environment is required.
 
-No build tools or compilation steps are required. Open the file in a browser to test changes.
+## Testing
 
----
+Recommended manual tests:
+- Validate empty, short, and valid input.
+- Test audio mute and unmute.
+- Test transitions between all screens.
+- Test on desktop and mobile sizes.
+- Test with reduced motion enabled.
+- Test the Escape key behavior.
+
+## Contributing
+
+Contributions are welcome.
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Make your changes.
+4. Submit a pull request.
+
+Please keep the single-file structure and accessibility support intact.
+
+## Build and Release
+
+No build process is required.
+
+1. Verify the latest changes.
+2. Test in multiple browsers.
+3. Commit and tag the release.
+4. Deploy the `index.html` file to a static host.
 
 ## License
 
-This application is provided as open source. See the `LICENSE` file for details.
-
----
+This application is provided as open source. See the `LICENSE` file for details. 
 
 ## Author
 
-Created by Haiere as a personal greeting tool.
+Created by **Haiere & HajirStudio** as a personal greeting tool.
 
----
+## Support
 
-Last updated: 2026
+For questions, issues, or suggestions, open an issue in the repository.
