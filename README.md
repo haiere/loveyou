@@ -2,8 +2,6 @@
 
 A single-page romantic web experience by **Haiere** that delivers a personalized animated message with soft glassmorphism visuals, floating hearts, and optional calm instrumental background music.
 
-![Preview](https://i.postimg.cc/8PJ0bhb1/H-haiere.webp)
-
 ## Overview
 
 **A Message For You** is a lightweight, self-contained web app built with HTML, CSS, and vanilla JavaScript.  
